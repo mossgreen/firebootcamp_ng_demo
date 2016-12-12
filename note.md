@@ -51,3 +51,75 @@ Communicating between Components
 	        `
 	    })    
 	```
+
+
+Communicating between Components
+----
+1. add count.service.ts under folder count
+```
+import { Injectable } from '@angular/core';
+
+@Injectable()
+export class CounterService {
+
+      getCount() {
+          return 5;
+      }
+}
+```
+2. Inject the service into the components constructor
+The final code for our counter component will look like below
+```
+import { Component, OnInit } from '@angular/core';
+import { CounterLogicComponent } from './counter-logic.component';
+import { CounterService } from './counter.service';
+
+@Component({
+    selector: 'counter',
+    template: `
+            <p>Count: {{currentValue}}</p>
+            <counter-logic [counterValue]="currentValue" (counterChanged)="updateCurrentCount($event)"></counter-logic>
+        `,
+    directives: [CounterLogicComponent],
+    providers: [CounterService]
+})
+export class CounterComponent implements OnInit {
+    currentValue: number = 0
+
+    constructor(private _counterService: CounterService) { }
+
+    ngOnInit() {
+        this.getCurrentValue();
+    }
+
+    updateCurrentCount(currentCount: number) {
+        this.currentValue = currentCount;
+    }
+
+    getCurrentValue() {
+        this.currentValue = this._counterService.getCount();
+    }
+
+}
+```
+
+What we learn so far
+-------------
+1. name convention
+    * `counter.service.ts`
+    * `import {CounterService} from "./counter.service";`
+    * `export class CounterService`
+2. always use @Injectable decorator in service file
+3. register the service should use `provider`, here: 
+```
+@Component({
+    selector: 'counter',
+    template: `
+            <p>Count: {{currentValue}}</p>
+            <counter-logic [counterValue]="currentValue" (counterChanged)="updateCurrentCount($event)"></counter-logic>
+        `,
+    providers: [CounterService]
+})
+export class CounterComponent implements OnInit {
+```
+4. 
