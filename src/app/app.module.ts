@@ -5,11 +5,11 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { CounterComponent } from './counter/counter.component';
-
+import { CounterLogicComponent } from './counter/counter-logic.component';
 
 @NgModule({
   declarations: [
-    AppComponent, CounterComponent
+    AppComponent, CounterComponent,CounterLogicComponent
   ],
   imports: [
     BrowserModule,
