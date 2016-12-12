@@ -11,7 +11,7 @@ import { CounterService } from './counter.service';
     providers: [CounterService]
 })
 export class CounterComponent implements OnInit {
-    currentValue: number = 0
+    currentValue: number;
 
     constructor(private _counterService: CounterService) { }
 

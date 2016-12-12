@@ -6,11 +6,11 @@ import { Component } from '@angular/core';
         template: `
             <div>
                 <h2>App Component</h2>
-                                <counter></counter>
+                <counter></counter>
 
             </div>
         `
     })    
 export class AppComponent {
-  title = 'app works!';
+
 }

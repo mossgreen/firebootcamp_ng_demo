@@ -1,22 +1,15 @@
+import { NgModule, Input, Output, EventEmitter  }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule }    from '@angular/http';
 
-import { AppComponent } from './app.component';
+import { AppComponent }  from './app.component';
 import { CounterComponent } from './counter/counter.component';
 import { CounterLogicComponent } from './counter/counter-logic.component';
 
+
 @NgModule({
-  declarations: [
-    AppComponent, CounterComponent,CounterLogicComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports:      [ BrowserModule, HttpModule ],
+  declarations: [ AppComponent, CounterLogicComponent,  CounterComponent],
+  bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
