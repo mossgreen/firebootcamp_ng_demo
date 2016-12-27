@@ -1,4 +1,5 @@
 export interface Todo{
     text:string,
-    done:boolean
+    done:boolean,
+    archived:boolean,
 }
