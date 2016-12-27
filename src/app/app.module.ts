@@ -2,6 +2,7 @@ import { NgModule, Input, Output, EventEmitter  }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule }    from '@angular/http';
 import { FormsModule }   from '@angular/forms';
+import { routing } from './app.routing';
 
 import { AppComponent }  from './app.component';
 import { TodoComponent } from './todo/todo.component';
@@ -13,7 +14,7 @@ import { CounterLogicComponent } from './counter/counter-logic.component';
 
 
 @NgModule({
-  imports:      [ BrowserModule, HttpModule,FormsModule ],
+  imports:      [ BrowserModule, HttpModule,FormsModule, routing],
   declarations: [ AppComponent,TodoComponent,TodoListComponent,TodoFormComponent, CounterLogicComponent,  CounterComponent],
   bootstrap:    [ AppComponent ]
 })
