@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { TodoService } from './todo/todo.service';
 
 @Component({
@@ -8,6 +9,8 @@ import { TodoService } from './todo/todo.service';
   template:
   `
   <nav class="navbar navbar-default navbar-static-top">
+
+
       <div class="container">
         <div class="navbar-header">
           <a class="navbar-brand" href="/">FireBootCamp Angular - Todo</a>
