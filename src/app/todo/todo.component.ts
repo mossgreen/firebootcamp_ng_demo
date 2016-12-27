@@ -7,7 +7,8 @@ import { Todo } from './todo.model';
     `
 <div class="col-sm-6 col-sm-offset-3">
     <h2>Todo</h2>
-    <todo-form></todo-form>
+    <todo-form (newTask)="addTask($event)"></todo-form>
+
     <todo-list [todos]="todos"></todo-list>
 
 </div>
@@ -20,4 +21,8 @@ export class TodoComponent {
         { text: 'build an angular app', done: false }
 
     ];
+
+    addTask(task:Todo){
+        this.todos.push(task);
+    }
 }
