@@ -5,7 +5,7 @@ import { TodoService } from './todo/todo.service';
   selector: 'my-app',
   providers: [TodoService],
   styles: [`div.container { border: solid 1px red; margin: 10px; padding: 10px; }`],
-  template: 
+  template:
   `
   <nav class="navbar navbar-default navbar-static-top">
       <div class="container">
@@ -15,8 +15,9 @@ import { TodoService } from './todo/todo.service';
         <ul class="nav navbar-nav">
           <!--This is an Angular router directive that when clicked will change the route to be / (the application root). 
           Because in our todo.routing.ts we do a redirect from '' to 'todo', this will load the todo component -->
-          <li><a [routerLink]="['/']">Todos</a></li>
 
+          <li> <a [routerLink]="['/']">Todos</a></li>
+          <li> <a [routerLink]="['/todoArchive']">Todo Archive</a></li>
         </ul>
       </div>
   </nav>

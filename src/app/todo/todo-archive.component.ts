@@ -9,7 +9,7 @@ import {TodoService} from './todo.service';
     <div>
         <h2>Archived Todos</h2>
         <div>
-            <todo-list [todos]="todos">
+            <todo-list [todos]="todos"></todo-list>
         </div>
     </div>
     `,
