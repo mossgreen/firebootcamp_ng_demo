@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import {TodoService} from './todo/todo.service';
 
 @Component({
     selector: 'my-app',
+    providers: [TodoService],
     styles: [`div { border: solid 1px red; margin: 10px; padding: 10px; }`],
     template: `
 

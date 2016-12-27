@@ -23,7 +23,7 @@ export class TodoFormComponent {
 
   addTodo() {
     if (this.todo) {
-     this.newTodo.next({text:this.todo, done:false});
+     this.newTodo.next({text:this.todo, done:false,archived:false});
     }
     this.todo = '';
   }
