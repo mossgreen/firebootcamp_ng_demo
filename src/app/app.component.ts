@@ -8,6 +8,15 @@ import { TodoService } from './todo/todo.service';
   styles: [`div.container { border: solid 1px red; margin: 10px; padding: 10px; }`],
   template:
   `
+
+  <h1>{{appTitle}}</h1><br>
+    <div>logTime at: {{logTime}}</div><br>
+    <div>
+      Refreshed:{{currentDateTime}} 
+      <button (click)="setCurrentTime()">Refresh</button>
+    </div>
+
+ <hr>
   <nav class="navbar navbar-default navbar-static-top">
 
 
@@ -46,5 +55,13 @@ import { TodoService } from './todo/todo.service';
   `
 })
 export class AppComponent {
+
+  appTitle:string = "This is a todo application.";
+  logTime:Date = new Date();
+  currentDateTime: Date;
+
+  setCurrentTime(){
+    this.currentDateTime = new Date();
+  }
 
 }
