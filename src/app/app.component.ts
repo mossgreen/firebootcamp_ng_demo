@@ -18,10 +18,14 @@ import { TodoService } from './todo/todo.service';
     </div>
     <br>
 
-      Edit app title:<input type="text" [value]="appTitle" placeholder="enter title">
- 
+<strong>one way binding</strong>: Edit app title:<input type="text" [value]="appTitle" placeholder="enter title">
+ <br>
+<strong>two way binding </strong>: Edit title again:<input type="text" [ngModel]="appTitle" (ngModelChange)="appTitle=$event" >
+( using (ngModelChange))
+<br>
 
-
+<strong>TRUE! two way binding </strong>: Edit title : )
+<input type="text" [(ngModel)]="appTitle">
  <hr>
 
 
