@@ -10,13 +10,21 @@ import { TodoService } from './todo/todo.service';
   `
 
   <h1>{{appTitle}}</h1><br>
-    <div>logTime at: {{logTime}}</div><br>
+    <div>logTime at: {{logTime}}</div>
+    <br>
     <div>
       Refreshed:{{currentDateTime}} 
       <button (click)="setCurrentTime()">Refresh</button>
     </div>
+    <br>
+
+      Edit app title:<input type="text" [value]="appTitle" placeholder="enter title">
+ 
+
 
  <hr>
+
+
   <nav class="navbar navbar-default navbar-static-top">
 
 
