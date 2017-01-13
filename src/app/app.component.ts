@@ -28,7 +28,12 @@ import { TodoService } from './todo/todo.service';
 <input type="text" [(ngModel)]="appTitle">
  <hr>
 
+  <div>
+      <h2>App Component</h2>
+      <counter></counter>
+  </div>
 
+<hr> 
   <nav class="navbar navbar-default navbar-static-top">
 
 
@@ -57,13 +62,7 @@ import { TodoService } from './todo/todo.service';
       -->
   </div>
 
-  <hr> 
-  <!--
-  <div>
-      <h2>App Component</h2>
-      <counter></counter>
-  </div>
-  -->
+  
   `
 })
 export class AppComponent {
