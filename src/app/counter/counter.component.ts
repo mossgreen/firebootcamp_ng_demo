@@ -7,14 +7,14 @@ import { CounterService } from './counter.service';
     template: `
         <div>
             <h2>Counter Component</h2>
-            <p>Count: {{currentValue}}</p>
-            <counter-logic [counterValue]="currentValue" (counterChanged)="updateCurrentCount($event)"></counter-logic>
+            <p>Count: {{localCurrentValue}}</p>
+            <counter-logic [logicCounterValue]="localCurrentValue" (counterChanged)="updateCurrentCount($event)"></counter-logic>
         </div>
         `,
         providers: [CounterService]
 })
 export class CounterComponent implements OnInit {
-    currentValue: number = 5;
+    localCurrentValue: number = 5;
     
     constructor(private _counterService: CounterService) {
         
@@ -24,15 +24,16 @@ export class CounterComponent implements OnInit {
         this.getCurrentValue();
     }
     
+
     getCurrentValue() {
     this._counterService.getCount()
         .subscribe((result) => {
-            this.currentValue = result.count;
+            this.localCurrentValue = result.count;
         });
     }
     
     updateCurrentCount(currentCount: number) {
-        this.currentValue = currentCount;
+        this.localCurrentValue = currentCount;
     }
 
 }

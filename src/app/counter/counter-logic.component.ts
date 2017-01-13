@@ -7,22 +7,22 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
             <div>
                 <h4>Counter Logic Component</h4>
                 <button class="btn btn-default" (click)="add()">add</button>
-                    <label>{{ counterValue }}</label>
+                    <label>{{ logicCounterValue }}</label>
                 <button class="btn btn-default" (click)="subtract()">subtract</button>
             </div>
         `
     })
     export class CounterLogicComponent {
-        @Input() counterValue: number = 0;
+        @Input() logicCounterValue: number = 0;
         @Output() counterChanged = new EventEmitter<number>();
 
         add() {
-            this.counterValue++;
-            this.counterChanged.emit(this.counterValue);
+            this.logicCounterValue++;
+            this.counterChanged.emit(this.logicCounterValue);
         }
 
         subtract() {
-            this.counterValue--;        
-            this.counterChanged.emit(this.counterValue);
+            this.logicCounterValue--;        
+            this.counterChanged.emit(this.logicCounterValue);
         }         
     }
