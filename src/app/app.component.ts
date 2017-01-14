@@ -66,15 +66,15 @@ It lets us output expressions inside {{}} without it being parsed by Angular
             </div>
 
 
-<div class="input-group">
-<input class="form-control" [(ngModel)]="enteredItem" />
-<span class="input-group-btn">
-<button (click)="addItem(enteredItem)" class="btn btn-default">Add</button>
-</span>
-</div>
-<div>
-<p *ngFor="let item of items">{{item}}</p>
-</div>
+            <div class="input-group">
+              <input class="form-control" [(ngModel)]="enteredItem" />
+              <span class="input-group-btn">
+                <button (click)="addItem(enteredItem)" class="btn btn-default">Add</button>
+              </span>
+            </div>
+            <ol>
+              <li *ngFor="let item of items">{{item}}</li>
+            </ol>
 
 
         </div>
