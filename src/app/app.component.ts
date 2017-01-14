@@ -38,17 +38,48 @@ import { TodoService } from './todo/todo.service';
 The ngNonBindable attribute is used to allow us to display Angular code on our page. 
 It lets us output expressions inside {{}} without it being parsed by Angular
 -->
+<!--
+<![CDATA[]]> is needed to be able to output HTML on to the page without the browser trying to render it
+-->
     <div class="container">
         <div class="well">
             <h4> Another example project -- Interpolation</h4>
             <div class="well">
               <p ngNonBindable>{{firstName}}</p>
             </div>
+            
             <div>
               <p> First Name: {{firstName}} </p>
             </div>
+
+            <h4>One way binding</h4>
+            <div class="well">
+              <![CDATA[<input [value]="firstName">]]>
+            </div>
+            <div>
+              <input class="form-control" [value]="firstName">
+            </div>
+
+            <h4>Event Binding</h4>
+            <div>
+               <![CDATA[ <button (click)="addItem(enteredItem)" class="btn btn-default">Add</button>]]>
+            </div>
+
+
+<div class="input-group">
+<input class="form-control" [(ngModel)]="enteredItem" />
+<span class="input-group-btn">
+<button (click)="addItem(enteredItem)" class="btn btn-default">Add</button>
+</span>
+</div>
+<div>
+<p *ngFor="let item of items">{{item}}</p>
+</div>
+
+
         </div>
     </div>
+
 
 
 <hr> 
@@ -89,6 +120,12 @@ export class AppComponent {
   logTime: Date = new Date();
   currentDateTime: Date;
   firstName: string = 'John Doe';
+  item:string = '';
+  items:string[] = [];
+
+  addItem(item:string){
+    this.items.push(item);
+  }
 
 
   setCurrentTime() {
