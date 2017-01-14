@@ -34,6 +34,24 @@ import { TodoService } from './todo/todo.service';
   </div>
 
 <hr> 
+<!--
+The ngNonBindable attribute is used to allow us to display Angular code on our page. 
+It lets us output expressions inside {{}} without it being parsed by Angular
+-->
+    <div class="container">
+        <div class="well">
+            <h4> Another example project -- Interpolation</h4>
+            <div class="well">
+              <p ngNonBindable>{{firstName}}</p>
+            </div>
+            <div>
+              <p> First Name: {{firstName}} </p>
+            </div>
+        </div>
+    </div>
+
+
+<hr> 
   <nav class="navbar navbar-default navbar-static-top">
 
 
@@ -67,11 +85,13 @@ import { TodoService } from './todo/todo.service';
 })
 export class AppComponent {
 
-  appTitle:string = "This is a todo application.";
-  logTime:Date = new Date();
+  appTitle: string = "This is a todo application.";
+  logTime: Date = new Date();
   currentDateTime: Date;
+  firstName: string = 'John Doe';
 
-  setCurrentTime(){
+
+  setCurrentTime() {
     this.currentDateTime = new Date();
   }
 
