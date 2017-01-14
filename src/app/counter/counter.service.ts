@@ -12,10 +12,15 @@ export class CounterService {
 
     constructor(private _http: Http) { }
 
+
+/*
+this function won't activate untill we subscribe to it in our component
+
+ */
     getCount(): Observable<ICount> {
         return this._http.get('./app/counter/count.json')
             .map((response) => response.json())
-            .do((response) => { console.log(JSON.stringify(response)) })
+            .do((response) => { console.log(JSON.stringify(response)); /*alert(JSON.stringify(response)) */ })
             .catch(this.handleError);
     }
 
