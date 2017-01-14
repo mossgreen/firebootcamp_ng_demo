@@ -76,6 +76,14 @@ It lets us output expressions inside {{}} without it being parsed by Angular
               <li *ngFor="let item of items">{{item}}</li>
             </ol>
 
+            <h4>Two way biding without ngModel</h4>
+            <![CDATA[  <input [value]="firstName" (input)="firstName = $event.target.value">]]>
+            <div>
+              <input class="form-control" [value]="firstName" (input)="firstName=$event.target.value">
+            </div>
+            <div>
+              <p>First Name: {{firstName}}<p>
+            </div>
 
         </div>
     </div>
