@@ -13,7 +13,7 @@ export class CounterService {
     constructor(private _http: Http) { }
 
     getCount(): Observable<ICount> {
-        return this._http.get('./src/app/counter/count.json')
+        return this._http.get('./app/counter/count.json')
             .map((response) => response.json())
             .do((response) => { console.log(JSON.stringify(response)) })
             .catch(this.handleError);
