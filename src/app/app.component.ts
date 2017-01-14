@@ -90,9 +90,85 @@ It lets us output expressions inside {{}} without it being parsed by Angular
             <div>
               <input class="form-control" [(ngModel)]="firstName">
              </div>
-                <div>
-                    <p>First Name: {{firstName}}</p>
+              <div>
+                  <p>First Name: {{firstName}}</p>
+              </div>
+              
+
+              <h4>Property Binding</h4>
+              <div class="well">
+                  <![CDATA[
+                          <a [href]="link">{{link}}</a>
+                      ]]>
+              </div>
+
+              <div>
+                <a [href]="link">{{link}}</a>
+              </div>
+
+              <h4>Structural Directives - NgIf</h4>
+              <div class="well">
+                  <![CDATA[
+                          <p *ngIf="firstName.length > 3">Input text is > 3!</p>
+                    ]]>
+                  <br>
+                  <![CDATA[
+                    <p [hidden]="hidden.length < 5">Input text is > 5!</p>
+                    ]]>
+              </div>
+
+              <p>
+              The choice between NgIf and [hidden] often depends on whether you will repeatedly show and hide the element and its children. Sometimes in this scenario you may want to only hide the element to save having to render and re-render it over and over with NgIf.
+              </p>
+
+              <div>
+                <input class="form-control" [(ngModel)]="firstName">
+              </div>
+              <div>
+                <p *ngIf="firstName.length > 3">
+                  Input text's length is > 3!
+                </p>
+              </div>
+               <div>
+                    <p [hidden]="firstName.length < 5">Input text's length is > 5!</p>
                 </div>
+
+
+               <h4>The safe navigation operator ( ?. )</h4>
+                <div class="well">
+                  <p ngNonBindable>Alias: {{person?.alias}}</p>
+
+                  <p>
+OR: You will see the error ORIGINAL EXCEPTION: TypeError: Cannot read property 'alias' of null. This is because you are evaluating the 'alias' property of the 'person' variable, but 'person' is null.
+                  </p>
+                </div>
+
+                <div>
+                  <button class="btn btn-default" (click)="addPerson()">
+                    Add Person Object
+                  </button>
+                </div>
+
+                <div>
+                  <p>Alias:{{person?.alias}}</p>
+                </div>
+
+                <h4>JSON pipe operator ( | )</h4>
+                <div class="well">
+                    <p ngNonBindable>Alias: {{person | json}}</p>
+                </div>
+
+                <div>
+                  <button class="btn btn-default" (click)="addPerson()">
+                    Add Person Object
+                  </button>
+                </div>
+
+                <div>
+                  <p>Alias:{{person | json}}</p>
+                </div>
+
+
         </div>
     </div>
 
@@ -136,10 +212,19 @@ export class AppComponent {
   logTime: Date = new Date();
   currentDateTime: Date;
   firstName: string = 'John Doe';
-  item:string = '';
-  items:string[] = [];
+  item: string = '';
+  items: string[] = [];
 
-  addItem(item:string){
+  link = 'http://angular.io';
+
+  person: any = null;
+
+  addPerson() {
+    this.person = {};
+    this.person.alias = 'Secret Alias';
+  }
+
+  addItem(item: string) {
     this.items.push(item);
   }
 
