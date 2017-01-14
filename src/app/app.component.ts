@@ -85,6 +85,14 @@ It lets us output expressions inside {{}} without it being parsed by Angular
               <p>First Name: {{firstName}}<p>
             </div>
 
+            <h4>Two way binding with ngModel</h4>
+            <![CDATA[<input [(ngModel)]="firstName">]]>
+            <div>
+              <input class="form-control" [(ngModel)]="firstName">
+             </div>
+                <div>
+                    <p>First Name: {{firstName}}</p>
+                </div>
         </div>
     </div>
 
