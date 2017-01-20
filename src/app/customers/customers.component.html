@@ -10,9 +10,18 @@
         <div class="col-md-8">
           <input type="text" class="form-control" id="firstNameId" placeholder="First Name (required)" minlength="3" [(ngModel)]="customer.firstName"
             name="firstName" #firstNameVar="ngModel" requried>
-        </div>
 
+          <span class="help-block" *ngIf="(firstNameVar.touched || firstNameVar.dirty) && firstNameVar.errors">
+          Please enter your first name.
+          </span>
+
+          <span *ngIf="firstNameVar.errors.minlength">
+            the first name must be longer than 3 characters.
+          </span>
+        </div>
       </div>
+
+
     </fieldset>
 
   </form>
