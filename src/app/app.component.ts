@@ -203,6 +203,10 @@ OR: You will see the error ORIGINAL EXCEPTION: TypeError: Cannot read property '
       -->
   </div>
 
+<hr>
+<div class="container">
+  <app-customers></app-customers>
+</div>
   
   `
 })

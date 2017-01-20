@@ -13,12 +13,13 @@ import {TodoArchiveComponent} from './todo/todo-archive.component';
 import { CounterComponent } from './counter/counter.component';
 import { CounterLogicComponent } from './counter/counter-logic.component';
 import { CustomersComponent } from './customers.component';
+import { CustomersComponent } from './customers/customers.component';
 
 
 @NgModule({
 
   imports:      [ BrowserModule, HttpModule,FormsModule, routing],
-  declarations: [ AppComponent,TodoComponent,TodoListComponent,TodoFormComponent, TodoArchiveComponent,CounterLogicComponent,  CounterComponent, CustomersComponent],
+  declarations: [ AppComponent,TodoComponent,TodoListComponent,TodoFormComponent, TodoArchiveComponent,CounterLogicComponent,  CounterComponent, CustomersComponent, CustomersComponent],
 
   bootstrap:    [ AppComponent ]
 })
