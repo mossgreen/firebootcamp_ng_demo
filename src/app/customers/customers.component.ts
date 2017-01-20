@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import {NgForm} from '@angular/forms';
+
+import {Customer} from './customer';
 
 @Component({
   selector: 'app-customers',
   templateUrl: './customers.component.html',
   styleUrls: ['./customers.component.css']
 })
-export class CustomersComponent implements OnInit {
+export class CustomersComponent {
 
-  constructor() { }
+  customer:Customer = new Customer();
 
-  ngOnInit() {
+  save(customerForm:NgForm){
+    console.log(customerForm);
+    console.log('saved: '+ JSON.stringify(customerForm.value));
   }
+
 
 }
