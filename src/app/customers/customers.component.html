@@ -1,3 +1,19 @@
-<p>
-  customers works!
-</p>
+<div class="panel panel-primary">
+  <div class="panel-heading">Sign Up!</div>
+</div>
+
+<div class="panel-body">
+  <form class="form-horizontal" (ngSubmit)="save(signForm)" #signupForm="ngForm" novalidate>
+    <fieldset>
+      <div class="form-group" [ngClass]="{'has-error':(firstNameVar.touched || firstNameVar.dirty) && !firstNameVar.valid}">
+        <label for="firstNameId" class="col-md-2 control-label">First Name</label>
+        <div class="col-md-8">
+          <input type="text" class="form-control" id="firstNameId" placeholder="First Name (required)" minlength="3" [(ngModel)]="customer.firstName"
+            name="firstName" #firstNameVar="ngModel" requried>
+        </div>
+
+      </div>
+    </fieldset>
+
+  </form>
+</div>
